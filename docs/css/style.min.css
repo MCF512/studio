@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Gotham";
+  font-weight: 400;
+  font-style: normal;
+  src: local("gothampro"), url("../fonts/gothampro.woff2") format("woff2"), url("../fonts/gothampro.woff") format("woff");
+  font-display: swap;
+}
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -66,4 +73,359 @@ button {
   padding: 0;
   cursor: pointer;
   color: inherit;
+}
+
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus {
+  outline: none;
+}
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slick-track:before, .slick-track:after {
+  content: "";
+  display: table;
+}
+.slick-track:after {
+  clear: both;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+[dir=rtl] .slick-slide {
+  float: right;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+body {
+  background-color: #fff;
+  font-family: "Gotham";
+  font-weight: 400;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.hits {
+  padding-top: 26px;
+  position: relative;
+}
+.hits__title {
+  font-size: 31px;
+  line-height: 1.19;
+  position: relative;
+  margin-bottom: 25px;
+  font-weight: 300;
+  color: #444444;
+}
+.hits__title::after {
+  content: url(../images/arrow.svg);
+  position: absolute;
+  top: -3px;
+  margin-left: 20px;
+}
+.hits .slick-arrow {
+  position: absolute;
+  right: 0px;
+  top: -55px;
+  width: 24px;
+  height: 24px;
+  background-color: #f6f6f6;
+  border-radius: 50%;
+}
+.hits .slick-arrow--prev {
+  right: 34px;
+}
+.hits .slick-arrow--next {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid #EEEEEE;
+  border-radius: 5px;
+  position: relative;
+  max-width: 270px;
+  width: 100%;
+}
+.card__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.card__info {
+  font-size: 13px;
+  line-height: 1.15;
+  display: block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 300;
+}
+.card__info:not(:last-child) {
+  margin-right: 5px;
+}
+.card__info--new {
+  color: #3DDC97;
+  background-color: #eefcf6;
+}
+.card__info--hit {
+  color: #E49F62;
+  background-color: #FCF4ED;
+}
+.card__image {
+  margin-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.card__feature {
+  font-size: 13px;
+  color: #888888;
+  line-height: 1.46;
+  margin-bottom: 5px;
+}
+.card__title {
+  color: #444444;
+  font-size: 15px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.card__rating {
+  margin-bottom: 33px;
+  padding-left: 21px;
+  color: #00ADEF;
+  font-size: 13px;
+  line-height: 1.15;
+  position: relative;
+}
+.card__rating::before {
+  content: url(../images/star.svg);
+  position: absolute;
+  left: 0;
+}
+.card__price {
+  font-size: 19px;
+  color: #444444;
+  line-height: 1.21;
+  margin-bottom: 15px;
+}
+.card__price--old {
+  color: #888888;
+  line-height: 1.15;
+  font-size: 13px;
+  position: relative;
+  margin-left: 15px;
+}
+.card__price--old::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #888888;
+  bottom: 5px;
+  left: 0;
+}
+.card__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.card__bottom button:not(:last-child) {
+  margin-right: 15px;
+}
+.card__add {
+  padding: 14px 36px;
+  color: #fff;
+  background-color: #00ADEF;
+  border-radius: 5px;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.slick-slide {
+  margin: 0 15px;
+}
+.slick-list {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+@media (max-width: 768px) {
+  .hits {
+    padding-top: 18px;
+  }
+  .hits__title::after {
+    margin-left: 0;
+    right: 5px;
+  }
+
+  .card {
+    max-width: 247px;
+  }
+  .card__info--new {
+    display: none;
+  }
+  .card__add {
+    padding: 14px 25px;
+  }
+  .card__price--old {
+    display: none;
+  }
+
+  .slick-list {
+    padding: 0 30% 0 0 !important;
+  }
+  .slick-slide {
+    max-width: 250px;
+    width: 100%;
+    margin: 0 15px;
+  }
+}
+@media (max-width: 320px) {
+  .card {
+    max-width: 290px;
+    padding: 15px;
+  }
+  .card__top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .card__info:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+  .card__info--new {
+    display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .card__price--old {
+    display: inline;
+    margin-left: 10px;
+  }
+  .card img {
+    height: 98px;
+  }
+  .card__bottom button:not(:last-child) {
+    margin-right: 0;
+  }
+  .card__add {
+    display: inline-block;
+    width: 100%;
+  }
+  .card__favourite {
+    position: absolute;
+    top: 15px;
+    right: 51px;
+  }
+  .card__compare {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  .hits__title {
+    margin-bottom: 15px;
+  }
+
+  .slick-list {
+    padding: 0 0 0 0 !important;
+  }
+  .slick-slide {
+    margin: 0 0px;
+  }
+  .slick-list {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .slick-slide {
+    max-width: 290px;
+    width: 100%;
+  }
 }
